@@ -88,7 +88,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
@@ -119,7 +119,7 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
 
-PRODUCTION = True
+PRODUCTION = False
 
 if PRODUCTION:
     import sys
