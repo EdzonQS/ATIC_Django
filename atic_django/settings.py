@@ -121,7 +121,7 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'arltechinnovation'
 EMAIL_HOST_PASSWORD = password
 EMAIL_HOST_EMAIL = 'arltechinoovation'
-EMAIL_TO = 'jack@jackowens.info'
+EMAIL_TO = 'dylpickel88@gmail.com'
 
 PRODUCTION = False
 
