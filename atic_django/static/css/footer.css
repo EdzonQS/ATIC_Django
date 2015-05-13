@@ -4,6 +4,8 @@ footer {
     text-align: center;
     background-color: #AAA;
     margin-top: 5vw;
+    position: fixed;
+    bottom: 0;
 }
 footer a {
     display: inline-block;

@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^about/$', TemplateView.as_view(template_name="info.html")),
     url(r'^projects/$', TemplateView.as_view(template_name="projects.html")),
     url(r'^contact/$', views.ContactView.as_view()),
+    url(r'^submitted/$',TemplateView.as_view(template_name="submitted.html")),
 ]
