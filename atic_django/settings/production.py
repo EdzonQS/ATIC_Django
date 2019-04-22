@@ -117,9 +117,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-"""
 #Set up for google for development
-f = open(BASE_DIR + '/passwd.txt', 'r')
+f = open(os.path.join(BASE_DIR + '/passwd.txt', 'r'))
 password = f.read()
 f.close()
 password = password.strip()
@@ -130,4 +129,3 @@ EMAIL_HOST_USER = 'arltechinnovation'
 EMAIL_HOST_PASSWORD = password
 EMAIL_HOST_EMAIL = 'arltechinoovation'
 EMAIL_TO = 'edzon.quinteros@novawebdevelopment.org'
-"""
