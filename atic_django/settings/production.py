@@ -118,7 +118,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #Set up for google for development
-f = open(BASE_DIR + '/passwd.txt', 'r')
+f = open(BASE_DIR + 'passwd.txt', 'r')
 password = f.read()
 f.close()
 password = password.strip()
