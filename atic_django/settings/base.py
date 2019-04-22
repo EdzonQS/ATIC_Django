@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +25,7 @@ SECRET_KEY = 'u_$#2wqojp6q3ul6-phslz(42+v#nonxft-uvzowg1obyg7*ih'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,13 +82,16 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Eastern'
 
 USE_I18N = True
 
@@ -101,14 +104,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
     (os.path.join(BASE_DIR, 'atic_django', 'static'))
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 #Set up for google for development
 f = open(BASE_DIR + '/passwd.txt', 'r')
@@ -121,11 +129,4 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'arltechinnovation'
 EMAIL_HOST_PASSWORD = password
 EMAIL_HOST_EMAIL = 'arltechinoovation'
-EMAIL_TO = 'jack@jackowens.info'
-
-PRODUCTION = False
-
-if PRODUCTION:
-    import sys
-    sys.path.insert(0, (BASE_DIR + '/atic_django/'))
-    from settings_pro import *
+EMAIL_TO = 'edzon.quinteros@novawebdevelopment.org'
